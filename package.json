@@ -1,0 +1,43 @@
+{
+  "name": "godless-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.1.0",
+    "ascii-table": "0.0.9",
+    "bufferutil": "^4.0.1",
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "erlpack": "github:discordapp/erlpack",
+    "esm": "^3.2.25",
+    "ffmpeg-static": "^2.7.0",
+    "libsodium-wrappers": "^0.7.6",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.9.11",
+    "node-opus": "^0.3.3",
+    "opusscript": "0.0.6",
+    "sodium": "^3.0.2",
+    "utf-8-validate": "^5.0.2",
+    "zlib-sync": "^0.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	  "start": "node -r esm bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshTRN/godless-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoshTRN/godless-bot/issues"
+  },
+  "homepage": "https://github.com/JoshTRN/godless-bot#readme"
+}
