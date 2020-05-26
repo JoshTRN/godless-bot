@@ -13,7 +13,7 @@ module.exports = {
 		}
 
 		const [user, sound] = args;
-		const baseDir = dirname(process.mainModule.filename)
+		const baseDir = dirname(process.mainModule.filename);
 		const file = join(baseDir, `/sounds/${user}/${sound}.mp3`);
 		
 		if (!existsSync(file)) {
@@ -21,13 +21,15 @@ module.exports = {
 			return;
 		}
 
-		playFile(vc, file)
+		playFile(vc, file);
 
 		async function playFile(vc, file) {
-			const connection = await vc.join()
+			const connection = await vc.join();
 			const dispatcher = connection.play(file);
 			dispatcher.on('finish', () => {
 				vc.leave();
+				bot.destroy();
+				bot.login(process.env.BOT_TOKEN);
 			});
 		}
 	}
