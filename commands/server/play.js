@@ -7,6 +7,11 @@ module.exports = {
 	run: (bot, msg, args) => {
 
 		const vc = msg.member.voice.channel;
+
+		if (!vc) {
+			return;
+		}
+
 		const [user, sound] = args;
 		const baseDir = dirname(process.mainModule.filename)
 		const file = join(baseDir, `/sounds/${user}/${sound}.mp3`);
@@ -21,8 +26,8 @@ module.exports = {
 		async function playFile(vc, file) {
 			const connection = await vc.join()
 			const dispatcher = connection.play(file);
-			dispatcher.on('finish', async end => {
-				await vc.leave();
+			dispatcher.on('finish', () => {
+				vc.leave();
 			});
 		}
 	}
