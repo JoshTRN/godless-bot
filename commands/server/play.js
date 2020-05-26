@@ -4,7 +4,7 @@ import { existsSync } from 'fs';
 module.exports = {
 	name: `play`,
 	aliases: ['p'],
-	run: (bot, msg, args) => {
+	run: async (bot, msg, args) => {
 
 		const vc = msg.member.voice.channel;
 		const [user, sound] = args;
