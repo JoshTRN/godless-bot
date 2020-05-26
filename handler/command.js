@@ -5,7 +5,8 @@ const table = new ascii().setHeading('Command', 'Load Status');
 module.exports = (bot) => {
 
     readdirSync('./commands/').forEach(dir => {
-        const commands = readdirSync(`./commands/${dir}`).filter(file => file.endsWith('.js'));
+		console.log(dir)
+		const commands = readdirSync(`./commands/${dir}`).filter(file => file.endsWith('.js'));
 
         for (let file of commands) {
             let commandFile = require(`../commands/${dir}/${file}`);
@@ -14,14 +15,15 @@ module.exports = (bot) => {
                 bot.commands.set(commandFile.name, commandFile);
                 table.addRow(file, '✅');
             } else {
-                table.addRow(file, '❌ => slaveConnection missing??');
+                table.addRow(file, '❌ => file missing.');
                 continue;
             }
 
-            if (commandFile.aliases && Array.isArray(commandFile)) {
+            if (commandFile.aliases && Array.isArray(commandFile.aliases)) {
                 commandFile.aliases.forEach(alias => bot.aliases.set(alias, commandFile.name));
             }
-        }
+		}
+		console.log(bot.aliases)
         console.log(table.toString());
     });
 }
