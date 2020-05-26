@@ -17,9 +17,6 @@ module.exports = {
 		const dispatcher = connection.play(file);
 		dispatcher.on('finish', () => {
 			vc.leave();
-			bot.destroy();
-			bot.login(process.env.BOT_TOKEN);
 		});
-
 	}
 }
