@@ -9,8 +9,8 @@
   "dependencies": {
     "@discordjs/opus": "^0.1.0",
     "ascii-table": "0.0.9",
-    "bufferutil": "^4.0.1",
-    "discord.js": "^12.2.0",
+    "bufferutil": "^3.0.5",
+    "discord.js": "^11.4.2",
     "dotenv": "^8.2.0",
     "erlpack": "github:discordapp/erlpack",
     "esm": "^3.2.25",
@@ -19,16 +19,18 @@
     "libsodium-wrappers": "^0.7.6",
     "lodash": "^4.17.15",
     "mongoose": "^5.9.11",
-    "node-opus": "^0.3.3",
+    "node-opus": "^0.2.9",
     "opusscript": "0.0.6",
     "sodium": "^3.0.2",
     "utf-8-validate": "^5.0.2",
+    "uws": "^9.148.0",
     "zlib-sync": "^0.1.6"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r esm bot.js"
+	"start": "node -r esm bot.js",
+	"dev": "nodemon -r esm bot.js"
   },
   "repository": {
     "type": "git",
