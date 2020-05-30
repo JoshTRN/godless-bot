@@ -8,7 +8,7 @@ module.exports = (bot) => {
 		const commands = readdirSync(`./commands/${dir}`).filter(file => file.endsWith('.js'))
 
 		for (let file of commands) {
-			let commandFile = require(`../commands/${dir}/${file}`)
+			const commandFile = require(`../commands/${dir}/${file}`)
 
 			if (commandFile.name) {
 				bot.commands.set(commandFile.name, commandFile)
