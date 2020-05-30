@@ -19,7 +19,8 @@ module.exports = {
             for (let index in fileNames) {
                 commandOptions += `${parseInt(index) + 1}: ${fileNames[index]}\n`;
             }
-            msg.channel.send('Commands for ' + user + "\n```" + commandOptions + "```");
+			msg.channel.send('Commands for ' + user + "\n```" + commandOptions + "```");
+			return;
 		}
 
 		const file = join(baseDir, `/sounds/${user}/${sound}.mp3`);
@@ -28,8 +29,6 @@ module.exports = {
 
 		const connection = await vc.join();
 		const dispatcher = connection.playFile(file);
-		dispatcher.on('end', () => {
-			vc.leave();
-		});
+		dispatcher.on('end', () => { vc.leave() });
 	}
 }
