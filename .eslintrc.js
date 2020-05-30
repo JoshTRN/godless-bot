@@ -18,7 +18,7 @@ module.exports = {
 		'no-undef': ['off'], // because of global things like "define" and "log"
 		'operator-linebreak': ['error', 'before'],
 		'no-nested-ternary': ['error'],
-		curly: ['error', 'multi'],
+		curly: ['error', 'multi', 'consistent'],
 		'space-before-function-paren': ['error', 'always'],
 		'keyword-spacing': ['error', { 'before': true, 'after': true }],
 		'no-extra-parens': ["off"],

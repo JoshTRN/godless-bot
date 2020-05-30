@@ -11,8 +11,9 @@ module.exports = (bot) => {
 		if (name) {
 			bot.on(name, run.bind(null, bot))
 			table.addRow(name, '✅')
-		} else 
-			table.addRow(file, '❌ => slaveConnection missing??') 
+		} else {
+			table.addRow(file, '❌ => slaveConnection missing??')
+		} 
 	})
 	console.log(table.toString())
 }

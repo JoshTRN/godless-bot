@@ -20,7 +20,6 @@ module.exports = (bot) => {
 
 			if (commandFile.aliases && Array.isArray(commandFile.aliases)) 
 				commandFile.aliases.forEach(alias => bot.aliases.set(alias, commandFile.name))
-            
 		}
 	})
 	console.log(table.toString())
