@@ -1,5 +1,5 @@
 import { readdirSync } from 'fs'
-const ascii = require('ascii-table')
+import ascii from 'ascii-table'
 const table = new ascii().setHeading('Command', 'Load Status')
 
 module.exports = (bot) => {
