@@ -22,7 +22,7 @@ module.exports = {
 				commandOptions += `${fileNum}: ${fileNames[index]}\n`
 				bot.commandCache.set(fileNum, fileNames[index])
 			}
-			console.log(bot.commandCache)
+
 			msg.channel.send('Commands for ' + user + "\n```" + commandOptions + "```")
 			return
 		}
@@ -33,8 +33,7 @@ module.exports = {
 
 		const connection = await vc.join()
 		const dispatcher = connection.playFile(file)
-		dispatcher.on('end', () => {
-			vc.leave() 
-		})
+
+		dispatcher.on('end', () => vc.leave())
 	}
 }
